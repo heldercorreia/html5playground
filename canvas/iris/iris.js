@@ -49,8 +49,8 @@ var g_a1, g_a2, g_b1 = -4, g_b2;
 
 var g_colorComponent = 0;
 
-var fps = 0;
-var lastFps = 0;
+var g_fps = 0;
+var g_lastFps = 0;
 
 var g_currentPatternPreset;
 var g_patternPresets = [
@@ -182,14 +182,14 @@ function paint() {
     _context.putImageData(g_buffer, 0, 0);
     _context.fillRect(0, 0, 20, 20);
     _context.fillStyle = '#fff';
-    _context.fillText(lastFps, 4, 14);
+    _context.fillText(g_lastFps, 4, 14);
     _context.fillStyle = '#000';
-    ++fps;
+    ++g_fps;
 }
 
 function updateFps() {
-    lastFps = fps;
-    fps = 0;
+    g_lastFps = g_fps;
+    g_fps = 0;
 }
 
 function onKeyEvent(ev) {
